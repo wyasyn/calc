@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 65.5%;
+}
+
+:root {
+    //THEME 1
+    //BACKGROUNDS
+    --bg-body: hsl(222, 26%, 31%);
+    --bg-keypad: hsl(223, 31%, 20%);
+    --bg-screen: hsl(224, 36%, 15%);
+    //KEYS
+    --bg-del: hsl(225, 21%, 49%);
+    --shadow-del: hsl(224, 28%, 35%);
+    --redToggle: hsl(6, 63%, 50%);
+    --darkRedShadow: hsl(6, 70%, 34%);
+    --keyClr: hsl(30, 25%, 89%);
+    --shadow-key: hsl(28, 16%, 65%);
+    //TEXT
+    --textNumbers: hsl(221, 14%, 31%);
+    --text: hsl(0, 0%, 100%); 
+    --clr-enter: hsl(0, 0%, 100%);
+    --clr-ops: hsl(0, 0%, 90%);
+}
+
+.theme_2 {
+        //THEME 1
+    //BACKGROUNDS
+    --bg-body: hsl(0, 0%, 90%);
+    --bg-keypad:  hsl(0, 5%, 81%);
+    --bg-screen: hsl(0, 0%, 93%);
+    //KEYS
+    --bg-del: hsl(185, 42%, 37%);
+    --shadow-del: hsl(185, 58%, 25%);
+    --redToggle: hsl(25, 98%, 40%);
+    --darkRedShadow: hsl(25, 99%, 27%);
+    --keyClr: hsl(45, 7%, 89%);
+    --shadow-key: hsl(35, 11%, 61%);
+    //TEXT
+    --textNumbers: hsl(60, 10%, 19%);
+    --text: black; 
+    --clr-enter: hsl(0, 0%, 100%);
+    --clr-ops: hsl(0, 0%, 90%);
+}
+.theme_3 {
+        //THEME 1
+    //BACKGROUNDS
+    --bg-body: hsl(268, 75%, 9%);
+    --bg-keypad: hsl(268, 71%, 12%);
+    --bg-screen: hsl(268, 71%, 12%);
+    //KEYS
+    --bg-del: hsl(281, 89%, 26%);
+    --shadow-del: hsl(285, 91%, 52%);
+    --redToggle: hsl(177, 92%, 70%);
+    --darkRedShadow: hsl(177, 92%, 70%);
+    --keyClr: hsl(281, 89%, 26%);
+    --shadow-key: hsl(285, 91%, 52%);
+    //TEXT
+    --textNumbers: hsl(52, 100%, 62%);
+    --text: hsl(52, 100%, 62%);
+    --clr-enter: hsl(268, 75%, 9%);
+    --clr-ops: hsl(0, 0%, 90%);
+}
+
+
+body {
+    position: relative;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 3.2rem;
+    font-weight: 700;
+    min-height: 100vh;
+    background: var(--bg-body);
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text);
+}
+
+
+header {
+    align-items: end;
+    justify-content: space-between;
+    padding: .5em;
+    h2 {
+        font-size: 1.8rem;
+    }
+    .theme-btn {
+        align-items: end;
+        gap: 2rem;
+        h3 {
+            font-size: 1.2rem;
+        }
+        .btn-container {
+            gap: 1rem;
+            .numbers {
+                padding: .5rem;
+                gap: 1.5rem;
+                font-size: 1rem;
+                .number {
+                    padding: .1rem;
+                }
+            }
+            .btns {
+                background: var(--bg-keypad);
+                padding: .2rem;
+                gap: 1rem;
+                -webkit-border-radius: 15px;
+                -moz-border-radius: 15px;
+                -ms-border-radius: 15px;
+                -o-border-radius: 15px;
+                border-radius: 15px;
+                .btn {
+                    width: 12px;
+                    aspect-ratio: 1/1;
+                    border-radius: 50%;
+                    -webkit-border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    -ms-border-radius: 50%;
+                    -o-border-radius: 50%;
+                    cursor: pointer;
+                    &:hover {
+                        background: rgba(0, 0, 0, 0.18);
+                    }
+                }
+            }
+        }
+    }
+}
+
+#btn_1 {
+    background: var(--redToggle);
+}
+
+
+input {
+    border: none;
+    outline: none;
+    font-size: inherit;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+}
+
+.operator {
+    background: var(--bg-del);
+    color: var(--clr-ops);
+    box-shadow: inset 0 -2px 2px var(--shadow-del);
+}
+.number {
+    background: var(--keyClr);
+    box-shadow: inset 0 -2px 2px var(--shadow-key);
+    color: var(--textNumbers);
+}
+
+.operator, .number, .equal {
+    cursor: pointer;
+}
+
+.flex {
+    display: flex;
+}
+
+.calculator {
+    max-width: 375px;
+    background: var(--bg-body);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+    form {
+        width: 100%;
+        .display {
+            width: 100%;
+            padding: .7em 1em;
+            margin-bottom: 1em;
+            background: var(--bg-screen);
+            color: var(--textDel);
+            text-align: end;
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            -ms-border-radius: 8px;
+            -o-border-radius: 8px;
+            border-radius: 8px;
+            &::placeholder {
+                color: var(--textDel);
+            }
+        }
+       .inputs {
+        width: 100%;
+        font-size: 2.5rem;
+        aspect-ratio: 1/1;
+        display: grid;
+        background: var(--bg-keypad);
+        gap: 1.5rem;
+        padding: .8em;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        -ms-border-radius: 8px;
+        -o-border-radius: 8px;
+        border-radius: 8px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: 
+        "s h n delete"
+        "f v x p"
+        "o w th m"
+        "period z divide t"
+        "c c e e"
+        ;
+        input {
+            &:hover {
+                opacity: 75%;
+            }
+        }
+        .delete {
+            grid-area: delete;
+        }
+        .plus {
+            grid-area: p;
+        }
+        .minus {
+            grid-area: m;
+        }
+        .times {
+            grid-area: t;
+        }
+        .divide {
+            grid-area: divide;
+        }
+        .equal {
+            grid-area: e;
+            background: var(--redToggle);
+            color: var(--clr-enter);
+            box-shadow: inset 0 -2px 2px var(--darkRedShadow);
+            }
+        .seven {
+            grid-area: s;
+        }
+        .eight {
+            grid-area: h;
+        }
+        .nine {
+            grid-area: n;
+        }
+        .four {
+            grid-area: f;
+        }
+        .five {
+            grid-area: v;
+        }
+        .six {
+            grid-area: x;
+        }
+        .one {
+            grid-area: o;
+        }
+        .two {
+            grid-area: w;
+        }
+        .three {
+            grid-area: th;
+        }
+        .zero {
+            grid-area: z;
+        }
+        .decimal {
+            grid-area: period;
+        }
+        .clear {
+            grid-area: c;
+        }
+       }
+    }
+}
